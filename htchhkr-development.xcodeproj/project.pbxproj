@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E34EE99C89F977C149E7036 /* Pods_htchhkr_development.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 062D6B4A2E6E90E5101CE957 /* Pods_htchhkr_development.framework */; };
 		D92B37FB2041C5F000457D59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92B37FA2041C5F000457D59 /* AppDelegate.swift */; };
 		D92B37FD2041C5F000457D59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92B37FC2041C5F000457D59 /* ViewController.swift */; };
 		D92B38002041C5F000457D59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D92B37FE2041C5F000457D59 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		062D6B4A2E6E90E5101CE957 /* Pods_htchhkr_development.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_htchhkr_development.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		712D97DC01121BDFFEE29AD9 /* Pods-htchhkr-development.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-htchhkr-development.debug.xcconfig"; path = "Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development.debug.xcconfig"; sourceTree = "<group>"; };
+		A0A477555A495B551613027E /* Pods-htchhkr-development.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-htchhkr-development.release.xcconfig"; path = "Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development.release.xcconfig"; sourceTree = "<group>"; };
 		D92B37F72041C5F000457D59 /* htchhkr-development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "htchhkr-development.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92B37FA2041C5F000457D59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D92B37FC2041C5F000457D59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E34EE99C89F977C149E7036 /* Pods_htchhkr_development.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15E5B593D1F8C7D1925F249F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				062D6B4A2E6E90E5101CE957 /* Pods_htchhkr_development.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C098B83C288889BBA1569F7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				712D97DC01121BDFFEE29AD9 /* Pods-htchhkr-development.debug.xcconfig */,
+				A0A477555A495B551613027E /* Pods-htchhkr-development.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D92B37EE2041C5F000457D59 = {
 			isa = PBXGroup;
 			children = (
 				D92B37F92041C5F000457D59 /* htchhkr-development */,
 				D92B37F82041C5F000457D59 /* Products */,
+				9C098B83C288889BBA1569F7 /* Pods */,
+				15E5B593D1F8C7D1925F249F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D92B38092041C5F000457D59 /* Build configuration list for PBXNativeTarget "htchhkr-development" */;
 			buildPhases = (
+				F0D27EC01C27113891BF0957 /* [CP] Check Pods Manifest.lock */,
 				D92B37F32041C5F000457D59 /* Sources */,
 				D92B37F42041C5F000457D59 /* Frameworks */,
 				D92B37F52041C5F000457D59 /* Resources */,
+				76CFED23A329590F8CE00A22 /* [CP] Embed Pods Frameworks */,
+				A4300C07FF7E840F1E90DD66 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,68 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		76CFED23A329590F8CE00A22 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4300C07FF7E840F1E90DD66 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0D27EC01C27113891BF0957 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-htchhkr-development-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D92B37F32041C5F000457D59 /* Sources */ = {
@@ -259,10 +348,12 @@
 		};
 		D92B380A2041C5F000457D59 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 712D97DC01121BDFFEE29AD9 /* Pods-htchhkr-development.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8DVHX5WRRH;
 				INFOPLIST_FILE = "htchhkr-development/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mustafagunes.htchhkr-development";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -272,10 +363,12 @@
 		};
 		D92B380B2041C5F000457D59 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0A477555A495B551613027E /* Pods-htchhkr-development.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8DVHX5WRRH;
 				INFOPLIST_FILE = "htchhkr-development/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mustafagunes.htchhkr-development";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -302,6 +395,7 @@
 				D92B380B2041C5F000457D59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
