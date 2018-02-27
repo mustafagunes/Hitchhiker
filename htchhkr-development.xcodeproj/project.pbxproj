@@ -24,6 +24,8 @@
 		D9BB9AD920454DD1009667D0 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BB9AD820454DD1009667D0 /* UIViewExt.swift */; };
 		D9BB9ADB20455848009667D0 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BB9ADA20455848009667D0 /* LoginVC.swift */; };
 		D9BB9ADD20457752009667D0 /* RoundedCornerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BB9ADC20457752009667D0 /* RoundedCornerTextField.swift */; };
+		D9E0E7B92045CB5300220B04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9E0E7B82045CB5300220B04 /* GoogleService-Info.plist */; };
+		D9E0E7BC2045CCE900220B04 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E0E7BB2045CCE900220B04 /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		D9BB9AD820454DD1009667D0 /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		D9BB9ADA20455848009667D0 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D9BB9ADC20457752009667D0 /* RoundedCornerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerTextField.swift; sourceTree = "<group>"; };
+		D9E0E7B82045CB5300220B04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D9E0E7BB2045CCE900220B04 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 		D92B37F92041C5F000457D59 /* htchhkr-development */ = {
 			isa = PBXGroup;
 			children = (
+				D9E0E7BA2045CCC000220B04 /* Services */,
 				D9BB9AD720454DA6009667D0 /* Extensions */,
 				D9375658204474BD001D0D4E /* Protocols */,
 				D9228E752041E8DD00029E1B /* Model */,
@@ -141,6 +146,7 @@
 				D92B38012041C5F000457D59 /* Assets.xcassets */,
 				D92B38032041C5F000457D59 /* LaunchScreen.storyboard */,
 				D92B38062041C5F000457D59 /* Info.plist */,
+				D9E0E7B82045CB5300220B04 /* GoogleService-Info.plist */,
 			);
 			path = "htchhkr-development";
 			sourceTree = "<group>";
@@ -159,6 +165,14 @@
 				D9BB9AD820454DD1009667D0 /* UIViewExt.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		D9E0E7BA2045CCC000220B04 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D9E0E7BB2045CCE900220B04 /* DataService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +241,7 @@
 				D92B38052041C5F000457D59 /* LaunchScreen.storyboard in Resources */,
 				D92B38022041C5F000457D59 /* Assets.xcassets in Resources */,
 				D92B38002041C5F000457D59 /* Main.storyboard in Resources */,
+				D9E0E7B92045CB5300220B04 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D937565A204474E6001D0D4E /* CenterVCDelegate.swift in Sources */,
+				D9E0E7BC2045CCE900220B04 /* DataService.swift in Sources */,
 				D97FF7132041F31700EC65F7 /* RoundedShadowButton.swift in Sources */,
 				D9BB9ADB20455848009667D0 /* LoginVC.swift in Sources */,
 				D93756552044712C001D0D4E /* LeftSidePanelVC.swift in Sources */,
