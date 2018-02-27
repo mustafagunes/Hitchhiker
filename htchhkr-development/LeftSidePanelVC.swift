@@ -17,4 +17,12 @@ class LeftSidePanelVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    @IBAction func signUpLoginBtnWasClicked(_ sender: Any) {
+        
+        let storyoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let loginVC = storyoard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
+        
+        present(loginVC!, animated: true, completion: nil)
+    }
 }
