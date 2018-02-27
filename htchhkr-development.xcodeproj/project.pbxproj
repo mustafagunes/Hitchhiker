@@ -21,6 +21,7 @@
 		D97FF70F2041F0DC00EC65F7 /* RoundedShadawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97FF70E2041F0DC00EC65F7 /* RoundedShadawView.swift */; };
 		D97FF7112041F1AE00EC65F7 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97FF7102041F1AE00EC65F7 /* CircleView.swift */; };
 		D97FF7132041F31700EC65F7 /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97FF7122041F31700EC65F7 /* RoundedShadowButton.swift */; };
+		D9BB9AD920454DD1009667D0 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BB9AD820454DD1009667D0 /* UIViewExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		D97FF70E2041F0DC00EC65F7 /* RoundedShadawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedShadawView.swift; sourceTree = "<group>"; };
 		D97FF7102041F1AE00EC65F7 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		D97FF7122041F31700EC65F7 /* RoundedShadowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
+		D9BB9AD820454DD1009667D0 /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		D92B37F92041C5F000457D59 /* htchhkr-development */ = {
 			isa = PBXGroup;
 			children = (
+				D9BB9AD720454DA6009667D0 /* Extensions */,
 				D9375658204474BD001D0D4E /* Protocols */,
 				D9228E752041E8DD00029E1B /* Model */,
 				D9228E742041E8D800029E1B /* View */,
@@ -142,6 +145,14 @@
 				D9375659204474E6001D0D4E /* CenterVCDelegate.swift */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		D9BB9AD720454DA6009667D0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D9BB9AD820454DD1009667D0 /* UIViewExt.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +298,7 @@
 				D93756552044712C001D0D4E /* LeftSidePanelVC.swift in Sources */,
 				D97FF7112041F1AE00EC65F7 /* CircleView.swift in Sources */,
 				D9375657204471DF001D0D4E /* ContainerVC.swift in Sources */,
+				D9BB9AD920454DD1009667D0 /* UIViewExt.swift in Sources */,
 				D92B37FD2041C5F000457D59 /* HomeVC.swift in Sources */,
 				D97FF70D2041F04300EC65F7 /* RoundImageView.swift in Sources */,
 				D92B37FB2041C5F000457D59 /* AppDelegate.swift in Sources */,
