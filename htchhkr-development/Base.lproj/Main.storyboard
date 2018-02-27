@@ -435,6 +435,9 @@
                                             <state key="normal" title="SIGN UP / LOGIN">
                                                 <color key="titleColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="authBtnClicked:" destination="gdZ-RQ-kYR" eventType="touchUpInside" id="DAu-by-oq8"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -462,6 +465,12 @@
                             <constraint firstItem="Nrg-Vm-U9A" firstAttribute="top" secondItem="rk7-er-TOq" secondAttribute="bottom" id="w0c-ZK-23a"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="authBtn" destination="han-lQ-NCa" id="dWv-ce-7Af"/>
+                        <outlet property="emailField" destination="cCo-Ry-Ad6" id="CVr-YI-15b"/>
+                        <outlet property="passwordField" destination="o5S-An-bQX" id="uXG-K3-Y1v"/>
+                        <outlet property="segmentedControl" destination="VHM-tU-SZT" id="HFT-zA-Mvi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrR-6U-Jo8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -754,14 +763,14 @@
                     <rect key="frame" x="0.0" y="0.0" width="247.66666666666666" height="65.666666666666686"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HTCH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4r-bV-Chq">
-                            <rect key="frame" x="0.0" y="0.0" width="138" height="65.666666666666671"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="HTCH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4r-bV-Chq">
+                            <rect key="frame" x="0.0" y="0.0" width="138" height="66"/>
                             <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="48"/>
                             <color key="textColor" red="0.84705882349999995" green="0.2784313725" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HKR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s54-co-fnU">
-                            <rect key="frame" x="138" y="0.0" width="109.66666666666666" height="65.666666666666671"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="HKR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s54-co-fnU">
+                            <rect key="frame" x="138" y="0.0" width="110" height="66"/>
                             <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="48"/>
                             <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
