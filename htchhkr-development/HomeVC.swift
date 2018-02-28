@@ -25,7 +25,7 @@ class HomeVC: UIViewController, MKMapViewDelegate {
         mapView.delegate = self
         
         self.view.addSubview(revealingSplashView)
-        revealingSplashView.animationType = SplashAnimationType.heartBeat
+        revealingSplashView.animationType = SplashAnimationType.popAndZoomOut
         revealingSplashView.startAnimation()
         
         revealingSplashView.heartAttack = true
