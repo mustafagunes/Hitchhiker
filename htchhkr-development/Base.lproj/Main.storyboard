@@ -181,6 +181,9 @@
                                     <constraint firstAttribute="height" constant="60" id="ReH-jd-LW7"/>
                                 </constraints>
                                 <state key="normal" image="centerMapBtn"/>
+                                <connections>
+                                    <action selector="centerMapBtnWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a0o-tj-FvR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4iN-W1-DxK">
                                 <rect key="frame" x="150" y="603" width="114" height="30"/>
