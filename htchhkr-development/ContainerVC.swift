@@ -93,7 +93,7 @@ extension ContainerVC : CenterVCDelegate {
         {
             addLeftPanelViewController()
         }
-        animateLefttPanel(shouldExpand: notAlreadyExpanded)
+        animateLeftPanel(shouldExpand: notAlreadyExpanded)
     }
     
     func addLeftPanelViewController() {
@@ -112,7 +112,7 @@ extension ContainerVC : CenterVCDelegate {
         sidePanelController.didMove(toParentViewController: self)
     }
     
-    func animateLefttPanel(shouldExpand: Bool) {
+    func animateLeftPanel(shouldExpand: Bool) {
         
         if shouldExpand
         {
@@ -161,7 +161,7 @@ extension ContainerVC : CenterVCDelegate {
         self.centerController.view.addSubview(whiteCoverView)
         whiteCoverView.fadeTo(alphaValue: 0.75, withDuration: 0.2)
         
-        tap = UITapGestureRecognizer(target: self, action: #selector(animateLefttPanel(shouldExpand:)))
+        tap = UITapGestureRecognizer(target: self, action: #selector(animateLeftPanel(shouldExpand:)))
         tap.numberOfTapsRequired = 1
         
         self.centerController.view.addGestureRecognizer(tap)

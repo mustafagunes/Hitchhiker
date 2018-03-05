@@ -28,18 +28,18 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
         view.bindtoKeyboard()
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleScreenTap(sender:)))
+        self.view.addGestureRecognizer(tap)
+        
         hideStatusBar = true
         
         UIView.animate(withDuration: 0.3) {
+            
             self.setNeedsStatusBarAppearanceUpdate()
         }
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleScreenTap(sender:)))
-        self.view.addGestureRecognizer(tap)
     }
     
-    func handleScreenTap(sender : UITapGestureRecognizer) {
-        
+    func handleScreenTap(sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
     

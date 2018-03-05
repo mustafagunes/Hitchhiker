@@ -12,5 +12,5 @@ protocol CenterVCDelegate {
     
     func toggleLeftPanel()
     func addLeftPanelViewController()
-    func animateLefttPanel(shouldExpand : Bool)
+    func animateLeftPanel(shouldExpand: Bool)
 }

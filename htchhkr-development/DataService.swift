@@ -20,27 +20,27 @@ class DataService {
     private var _REF_DRIVERS = DB_BASE.child("drivers")
     private var _REF_TRIPS = DB_BASE.child("trips")
     
-    var REF_BASE : DatabaseReference
+    var REF_BASE: DatabaseReference
     {
         return _REF_BASE
     }
     
-    var REF_USERS : DatabaseReference
+    var REF_USERS: DatabaseReference
     {
         return _REF_USERS
     }
     
-    var REF_DRIVERS : DatabaseReference
+    var REF_DRIVERS: DatabaseReference
     {
         return _REF_DRIVERS
     }
     
-    var REF_TRIPS : DatabaseReference
+    var REF_TRIPS: DatabaseReference
     {
         return _REF_TRIPS
     }
     
-    func createFirebaseDBUser(uid : String, userData : Dictionary<String, Any>, isDriver : Bool) {
+    func createFirebaseDBUser(uid: String, userData: Dictionary<String, Any>, isDriver: Bool) {
         
         if isDriver
         {

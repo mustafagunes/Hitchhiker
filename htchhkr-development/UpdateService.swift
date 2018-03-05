@@ -6,16 +6,15 @@
 //  Copyright © 2018 Mustafa GUNES. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import MapKit
 import Firebase
-import Foundation
 
 class UpdateService {
-    
     static var instance = UpdateService()
     
-    func updateUserLocation(withCoordinate coordinate: CLLocationCoordinate2D){
+    func updateUserLocation(withCoordinate coordinate: CLLocationCoordinate2D) {
         
         DataService.instance.REF_USERS.observeSingleEvent(of: .value, with: { (snapshot) in
             
@@ -25,7 +24,7 @@ class UpdateService {
                 {
                     if user.key == Auth.auth().currentUser?.uid
                     {
-                        DataService.instance.REF_USERS.child(user.key).updateChildValues(["coordinate" : [coordinate.latitude, coordinate.longitude]])
+                        DataService.instance.REF_USERS.child(user.key).updateChildValues(["coordinate": [coordinate.latitude, coordinate.longitude]])
                     }
                 }
             }
@@ -44,7 +43,7 @@ class UpdateService {
                     {
                         if driver.childSnapshot(forPath: "isPickupModeEnabled").value as? Bool == true
                         {
-                            DataService.instance.REF_DRIVERS.child(driver.key).updateChildValues(["coordinate" : [coordinate.latitude, coordinate.longitude]])
+                            DataService.instance.REF_DRIVERS.child(driver.key).updateChildValues(["coordinate": [coordinate.latitude, coordinate.longitude]])
                         }
                     }
                 }

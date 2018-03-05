@@ -28,7 +28,6 @@ class LeftSidePanelVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         super.viewWillAppear(animated)
         
         pickupModeSwitch.isOn = false
@@ -49,7 +48,7 @@ class LeftSidePanelVC: UIViewController {
             userEmailLbl.text = Auth.auth().currentUser?.email
             userAccountTypeLbl.text = ""
             userImageView.isHidden = false
-            loginOutBtn.setTitle("Logout", for: .normal)
+            loginOutBtn.setTitle("Sign Out", for: .normal)
         }
     }
     
@@ -88,6 +87,7 @@ class LeftSidePanelVC: UIViewController {
             }
         })
     }
+
     
     @IBAction func switchWasToggled(_ sender: Any) {
         
@@ -106,13 +106,13 @@ class LeftSidePanelVC: UIViewController {
         {
             pickupModeLabel.text = "PICKUP MODE ENABLED"
             appDelegate.MenuContainerVC.toggleLeftPanel()
-            DataService.instance.REF_DRIVERS.child(currentUserId!).updateChildValues(["isPickupModeEnabled" : true])
+            DataService.instance.REF_DRIVERS.child(currentUserId!).updateChildValues(["isPickupModeEnabled": true])
         }
         else
         {
             pickupModeLabel.text = "PICKUP MODE DISABLED"
             appDelegate.MenuContainerVC.toggleLeftPanel()
-            DataService.instance.REF_DRIVERS.child(currentUserId!).updateChildValues(["isPickupModeEnabled" : false])
+            DataService.instance.REF_DRIVERS.child(currentUserId!).updateChildValues(["isPickupModeEnabled": false])
         }
     }
     
@@ -120,16 +120,17 @@ class LeftSidePanelVC: UIViewController {
         
         if Auth.auth().currentUser == nil
         {
-            let storyoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let loginVC = storyoard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
-            
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
             present(loginVC!, animated: true, completion: nil)
+            
         }
         else
         {
             do
             {
                 try Auth.auth().signOut()
+                
                 userEmailLbl.text = ""
                 userAccountTypeLbl.text = ""
                 userImageView.isHidden = true

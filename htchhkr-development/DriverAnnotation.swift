@@ -6,23 +6,23 @@
 //  Copyright © 2018 Mustafa GUNES. All rights reserved.
 //
 
-import MapKit
 import Foundation
+import MapKit
 
-class DriverAnnotation : NSObject, MKAnnotation {
+class DriverAnnotation: NSObject, MKAnnotation {
     
-    var coordinate : CLLocationCoordinate2D
-    var key : String
+    dynamic var coordinate: CLLocationCoordinate2D
+    var key: String
     
-    init(coordinate : CLLocationCoordinate2D, withKey key : String) {
+    init(coordinate: CLLocationCoordinate2D, withKey key: String){
         
         self.coordinate = coordinate
         self.key = key
-
+        
         super.init()
     }
     
-    func update(annotationPosition annotation : DriverAnnotation, withCoordinate coordinate : CLLocationCoordinate2D) {
+    func update(annotationPosition annotation: DriverAnnotation, withCoordinate coordinate: CLLocationCoordinate2D) {
         
         var location = self.coordinate
         
@@ -35,3 +35,4 @@ class DriverAnnotation : NSObject, MKAnnotation {
         }
     }
 }
+
