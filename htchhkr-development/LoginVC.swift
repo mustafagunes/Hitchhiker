@@ -106,6 +106,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                                     
                                     switch errorCode
                                     {
+                                        case .emailAlreadyInUse:
+                                            print("Mustafa : Email already in use. Please try again")
                                         
                                         case .invalidEmail:
                                             print("Mustafa : That is an invalid email! Plase try again.")
@@ -121,7 +123,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                                 {
                                     //KOD ONCEDEN ASAGIDAKİ GİBİYDİ. DENEME KODUDUR.
                                     //if self.segmentedControl.selectedSegmentIndex == 0
-                                    if self.segmentedControl.selectedSegmentIndex == 1
+                                    if self.segmentedControl.selectedSegmentIndex == 0
                                     {
                                         let userData = ["provider": user.providerID] as [String: Any]
                                         DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: false)

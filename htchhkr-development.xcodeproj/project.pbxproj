@@ -27,6 +27,7 @@
 		D9BB9ADD20457752009667D0 /* RoundedCornerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BB9ADC20457752009667D0 /* RoundedCornerTextField.swift */; };
 		D9E0E7B92045CB5300220B04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9E0E7B82045CB5300220B04 /* GoogleService-Info.plist */; };
 		D9E0E7BC2045CCE900220B04 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E0E7BB2045CCE900220B04 /* DataService.swift */; };
+		D9F65842204D8D9700ED2335 /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F65841204D8D9700ED2335 /* DriverAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		D9BB9ADC20457752009667D0 /* RoundedCornerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerTextField.swift; sourceTree = "<group>"; };
 		D9E0E7B82045CB5300220B04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D9E0E7BB2045CCE900220B04 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		D9F65841204D8D9700ED2335 /* DriverAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				D97FF7102041F1AE00EC65F7 /* CircleView.swift */,
 				D97FF7122041F31700EC65F7 /* RoundedShadowButton.swift */,
 				D9BB9ADC20457752009667D0 /* RoundedCornerTextField.swift */,
+				D9F65841204D8D9700ED2335 /* DriverAnnotation.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				D97FF7112041F1AE00EC65F7 /* CircleView.swift in Sources */,
 				D9375657204471DF001D0D4E /* ContainerVC.swift in Sources */,
 				D9BB9AD920454DD1009667D0 /* UIViewExt.swift in Sources */,
+				D9F65842204D8D9700ED2335 /* DriverAnnotation.swift in Sources */,
 				D92B37FD2041C5F000457D59 /* HomeVC.swift in Sources */,
 				D9216F39204D6B080003AC97 /* UpdateService.swift in Sources */,
 				D97FF70D2041F04300EC65F7 /* RoundImageView.swift in Sources */,
