@@ -2,8 +2,6 @@
 //  DataService.swift
 //  htchhkr-development
 //
-//  Github Adress : www.github.com/mustafagunes
-//
 //  Created by Mustafa GUNES on 27.02.2018.
 //  Copyright © 2018 Mustafa GUNES. All rights reserved.
 //

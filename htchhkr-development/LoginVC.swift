@@ -28,14 +28,14 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
         view.bindtoKeyboard()
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleScreenTap(sender:)))
-        self.view.addGestureRecognizer(tap)
-
         hideStatusBar = true
         
         UIView.animate(withDuration: 0.3) {
             self.setNeedsStatusBarAppearanceUpdate()
         }
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleScreenTap(sender:)))
+        self.view.addGestureRecognizer(tap)
     }
     
     func handleScreenTap(sender : UITapGestureRecognizer) {
@@ -73,19 +73,15 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                         {
                             if self.segmentedControl.selectedSegmentIndex == 0
                             {
-                                let userData = ["provider" : user.providerID] as [String : Any]
-                                
+                                let userData = ["provider": user.providerID] as [String: Any]
                                 DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: false)
                             }
                             else
                             {
-                                let userData = ["provider" : user.providerID, "userIsDriver" : true, "isPickupModeEnabled" : false, "driverIsOnTrip" : false] as [String : Any]
-                                
+                                let userData = ["provider": user.providerID, "userIsDriver" : true, "isPickupModeEnabled" : false, "driverIsOnTrip" : false] as [String: Any]
                                 DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: true)
                             }
                         }
-                        print("Mustafa : Email user authenticated succesfully with Firebase")
-                        
                         self.dismiss(animated: true, completion: nil)
                     }
                     else
@@ -101,16 +97,15 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                                     print("Mustafa : An unxpected error occured. Plaase try again !")
                             }
                         }
-
+                        
                         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+                            
                             if error != nil
                             {
-                                if let errorCode = AuthErrorCode(rawValue: error!._code)
-                                {
+                                if let errorCode = AuthErrorCode(rawValue: error!._code) {
+                                    
                                     switch errorCode
                                     {
-                                        case .emailAlreadyInUse:
-                                            print("Mustafa : Email already in use. Please try again")
                                         
                                         case .invalidEmail:
                                             print("Mustafa : That is an invalid email! Plase try again.")
@@ -124,20 +119,19 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                             {
                                 if let user = user
                                 {
-                                    if self.segmentedControl.selectedSegmentIndex == 0
+                                    //KOD ONCEDEN ASAGIDAKİ GİBİYDİ. DENEME KODUDUR.
+                                    //if self.segmentedControl.selectedSegmentIndex == 0
+                                    if self.segmentedControl.selectedSegmentIndex == 1
                                     {
-                                        let userData = ["provider" : user.providerID] as [String : Any]
-                                        
+                                        let userData = ["provider": user.providerID] as [String: Any]
                                         DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: false)
                                     }
                                     else
                                     {
-                                        let userData = ["provider" : user.providerID, "userIsDriver" : true, "isPickupModeEnabled" : false, "driverIsOnTrip" : false] as [String : Any]
-                                        
+                                        let userData = ["provider": user.providerID, "userIsDriver" : true, "isPickupModeEnabled" : false, "driverIsOnTrip" : false] as [String: Any]
                                         DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: true)
                                     }
                                 }
-                                print("Mustafa : Succesfully created a new user with Firebase")
                                 self.dismiss(animated: true, completion: nil)
                             }
                         })

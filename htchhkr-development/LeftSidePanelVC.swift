@@ -91,6 +91,17 @@ class LeftSidePanelVC: UIViewController {
     
     @IBAction func switchWasToggled(_ sender: Any) {
         
+        
+//        // ASAGIDAKİ KOD DENEME AMACLI YAZILDI SİLMEYİ UNUTMA !!!!!!!
+//        if pickupModeSwitch.isOn == true
+//        {
+//            pickupModeSwitch.isOn = false
+//        }
+//        else if pickupModeSwitch.isOn == false
+//        {
+//            pickupModeSwitch.isOn = true
+//        }
+        
         if pickupModeSwitch.isOn
         {
             pickupModeLabel.text = "PICKUP MODE ENABLED"
