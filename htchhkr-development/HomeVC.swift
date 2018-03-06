@@ -258,6 +258,7 @@ extension HomeVC : MKMapViewDelegate {
                 {
                     self.matchingItems.append(mapItem as MKMapItem)
                     self.tableView.reloadData()
+                    self.shouldPresentLoadingView(false)
                 }
             }
         }
@@ -300,6 +301,8 @@ extension HomeVC : MKMapViewDelegate {
             }
             self.route = response.routes[0]
             self.mapView.add(self.route.polyline)
+            
+            self.shouldPresentLoadingView(false) // Loading view (Activity Indicator)
         }
     }
 }
@@ -335,6 +338,7 @@ extension HomeVC : UITextFieldDelegate {
         if textField == destinationTextField
         {
             performSearch()
+            shouldPresentLoadingView(true)
             view.endEditing(true)
         }
         return true
@@ -413,6 +417,8 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        shouldPresentLoadingView(true)
         
         let passengerCoordinate = manager?.location?.coordinate
         let passengerAnnotation = PassengerAnnotation(coordinate: passengerCoordinate!, key: currentUserId!)
