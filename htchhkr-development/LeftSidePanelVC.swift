@@ -106,21 +106,13 @@ class LeftSidePanelVC: UIViewController {
         {
             pickupModeLabel.text = "PICKUP MODE ENABLED"
             appDelegate.MenuContainerVC.toggleLeftPanel()
-            
-            if pickupModeSwitch.isOn == false
-            {
-                DataService.instance.REF_DRIVERS.child(currentUserId!).updateChildValues(["isPickupModeEnabled": true])
-            }
+            DataService.instance.REF_DRIVERS.child(currentUserId!).updateChildValues(["isPickupModeEnabled": true])
         }
         else
         {
             pickupModeLabel.text = "PICKUP MODE DISABLED"
             appDelegate.MenuContainerVC.toggleLeftPanel()
-            
-            if pickupModeSwitch.isOn == true
-            {
-                DataService.instance.REF_DRIVERS.child(currentUserId!).updateChildValues(["isPickupModeEnabled": false])
-            }
+            DataService.instance.REF_DRIVERS.child(currentUserId!).updateChildValues(["isPickupModeEnabled": false])
         }
     }
     
