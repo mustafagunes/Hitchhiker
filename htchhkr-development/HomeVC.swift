@@ -23,6 +23,7 @@ class HomeVC: UIViewController {
     var delegate: CenterVCDelegate?
     var manager: CLLocationManager?
     var regionRadius: CLLocationDistance = 1000
+    var currentUserId : String?
     
     let revealingSplashView = RevealingSplashView(iconImage: UIImage(named : "launchScreenIcon")!, iconInitialSize: CGSize(width : 80, height : 80), backgroundColor: UIColor.white)
 
@@ -31,6 +32,8 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        currentUserId = Auth.auth().currentUser?.uid
         
         manager = CLLocationManager()
         manager?.delegate = self
@@ -179,6 +182,16 @@ extension HomeVC : MKMapViewDelegate {
             
             view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             view.image = UIImage(named: "driverAnnotation")
+            
+            return view
+        }
+        else if let annotation = annotation as? PassengerAnnotation {
+
+            let identifier = "passenger"
+            var view: MKAnnotationView
+            
+            view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view.image = UIImage(named: "currentLocationAnnotation")
             
             return view
         }
@@ -332,6 +345,17 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let passengerCoordinate = manager?.location?.coordinate
+        let passengerAnnotation = PassengerAnnotation(coordinate: passengerCoordinate!, key: currentUserId!)
+        
+        mapView.addAnnotation(passengerAnnotation)
+        
+        destinationTextField.text = tableView.cellForRow(at: indexPath)?.textLabel?.text
+        
+        let selectedMapItem = matchingItems[indexPath.row]
+        
+        DataService.instance.REF_USERS.child(currentUserId!).updateChildValues(["tripCoordinate" : [selectedMapItem.placemark.coordinate.latitude, selectedMapItem.placemark.coordinate.longitude]])
         
         animateTableView(shouldShow: false)
         print("Mustafa : selected!")
