@@ -87,7 +87,6 @@ class LeftSidePanelVC: UIViewController {
             }
         })
     }
-
     
     @IBAction func switchWasToggled(_ sender: Any) {
         

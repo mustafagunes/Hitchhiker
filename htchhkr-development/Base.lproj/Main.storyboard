@@ -185,17 +185,6 @@
                                     <action selector="centerMapBtnWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a0o-tj-FvR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4iN-W1-DxK">
-                                <rect key="frame" x="150" y="603" width="114" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="114" id="J3v-cB-0Iy"/>
-                                    <constraint firstAttribute="height" constant="30" id="eDX-SF-Fqg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
-                                <state key="normal" title="CANCEL TRIP">
-                                    <color key="titleColor" red="0.84705882349999995" green="0.2784313725" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -204,9 +193,7 @@
                             <constraint firstItem="ZLk-pY-Y2b" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6jI-Pn-CRy"/>
                             <constraint firstItem="ZbX-F5-5fN" firstAttribute="top" secondItem="mI4-jv-xks" secondAttribute="bottom" constant="18" id="Am9-sA-FUD"/>
                             <constraint firstItem="ZbX-F5-5fN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="CyU-kK-0ed"/>
-                            <constraint firstItem="MYF-dP-SSY" firstAttribute="top" secondItem="4iN-W1-DxK" secondAttribute="bottom" constant="23" id="J5C-V4-jTD"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MYF-dP-SSY" secondAttribute="bottom" id="NYG-0a-4y3"/>
-                            <constraint firstItem="4iN-W1-DxK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QFz-PR-aMz"/>
                             <constraint firstItem="mI4-jv-xks" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="RAA-74-auD"/>
                             <constraint firstAttribute="trailing" secondItem="ZLk-pY-Y2b" secondAttribute="trailing" id="Tku-vi-1HA"/>
                             <constraint firstItem="4fv-kD-6I1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Yqz-yF-jCk"/>
