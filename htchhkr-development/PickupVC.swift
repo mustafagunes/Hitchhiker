@@ -13,11 +13,30 @@ class PickupVC: UIViewController {
 
     @IBOutlet weak var pickupMapView: RoundMapView!
     
+    var pickupCoordinate: CLLocationCoordinate2D!
+    var passengerKey: String!
+    
     var regionRadius : CLLocationDistance = 1000
     var pin : MKPlacemark? = nil
     
+    var locationPlacemark: MKPlacemark!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pickupMapView.delegate = self
+        
+        locationPlacemark = MKPlacemark(coordinate: pickupCoordinate)
+        
+        dropPinFor(placemark: locationPlacemark)
+        centerMapOnLocation(location: locationPlacemark.location!)
+    }
+    
+    func initData(coordinate: CLLocationCoordinate2D, passengerKey: String) {
+        
+        self.pickupCoordinate = coordinate
+        self.passengerKey = passengerKey
     }
     
     @IBAction func cancelBtnPressed(_ sender: Any) {
