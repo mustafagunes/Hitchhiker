@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class LoginVC: UIViewController, UITextFieldDelegate {
+class LoginVC: UIViewController, UITextFieldDelegate, Alertable {
     
 
     @IBOutlet weak var emailField: RoundedCornerTextField!
@@ -91,10 +91,10 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                             switch errorCode
                             {
                                 case .wrongPassword:
-                                    print("Mustafa : Whoops! That was the wrong password !")
+                                    self.showAlert("Mustafa : Whoops! That was the wrong password !")
                                 
                                 default:
-                                    print("Mustafa : An unxpected error occured. Plaase try again !")
+                                    self.showAlert("Mustafa : An unxpected error occured. Plaase try again !")
                             }
                         }
                         
@@ -107,13 +107,13 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                                     switch errorCode
                                     {
                                         case .emailAlreadyInUse:
-                                            print("Mustafa : Email already in use. Please try again")
+                                            self.showAlert("Mustafa : Email already in use. Please try again")
                                         
                                         case .invalidEmail:
-                                            print("Mustafa : That is an invalid email! Plase try again.")
+                                            self.showAlert("Mustafa : That is an invalid email! Plase try again.")
                                         
                                         default:
-                                            print("Mustafa : An unxpected error occured. Plaase try again !")
+                                            self.showAlert("Mustafa : An unxpected error occured. Plaase try again !")
                                     }
                                 }
                             }
