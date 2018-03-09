@@ -88,6 +88,36 @@ class HomeVC: UIViewController, Alertable {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        
+        DataService.instance.driverIsOnTrip(driverKey: self.currentUserId!, handler: { (isOnTrip, driverKey, tripKey) in
+            
+            if isOnTrip == true
+            {
+                DataService.instance.REF_TRIPS.observeSingleEvent(of: .value, with: { (tripSnapshot) in
+                    
+                    if let tripSnapshot = tripSnapshot.children.allObjects as? [DataSnapshot]
+                    {
+                        for trip in tripSnapshot
+                        {
+                            if trip.childSnapshot(forPath: "driverKey").value as? String == self.currentUserId!
+                            {
+                                let pickupCoordinatesArray = trip.childSnapshot(forPath: "pickupCoordinate").value as! NSArray
+                                let pickupCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: pickupCoordinatesArray[0] as! CLLocationDegrees, longitude: pickupCoordinatesArray[1] as! CLLocationDegrees)
+                                let pickupPlacemark = MKPlacemark(coordinate: pickupCoordinate)
+                                
+                                self.dropPinFor(placemark: pickupPlacemark)
+                                self.searchMapKitForResultsWithPolyline(forMapItem: MKMapItem(placemark: pickupPlacemark))
+                            }
+                        }
+                    }
+                })
+            }
+        })
+    }
+    
     func checkLocationAuthStatus() {
         
         if CLLocationManager.authorizationStatus() == .authorizedAlways
@@ -282,6 +312,8 @@ extension HomeVC : MKMapViewDelegate {
         lineRenderer.strokeColor = UIColor(displayP3Red: 216/255, green: 71/255, blue: 30/255, alpha: 0.75)
         lineRenderer.lineWidth = 3
         
+        shouldPresentLoadingView(false)
+        
         zoom(toFitAnnotationsFromMapView: self.mapView)
         
         return lineRenderer
@@ -338,7 +370,7 @@ extension HomeVC : MKMapViewDelegate {
         mapView.addAnnotation(annotation)
     }
     
-    func searchMapKitForResultsWitPolyline(forMapItem mapItem: MKMapItem) {
+    func searchMapKitForResultsWithPolyline(forMapItem mapItem: MKMapItem) {
         
         let request = MKDirectionsRequest()
         
@@ -358,7 +390,8 @@ extension HomeVC : MKMapViewDelegate {
             self.route = response.routes[0]
             self.mapView.add(self.route.polyline)
             
-            self.shouldPresentLoadingView(false) // Loading view (Activity Indicator)
+            let delegate = AppDelegate.getAppDelegate()
+            delegate.window?.rootViewController?.shouldPresentLoadingView(false) // Loading view (Activity Indicator)
         }
     }
     
@@ -528,7 +561,7 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
         
         dropPinFor(placemark: selectedMapItem.placemark)
         
-        searchMapKitForResultsWitPolyline(forMapItem: selectedMapItem)
+        searchMapKitForResultsWithPolyline(forMapItem: selectedMapItem)
         
         animateTableView(shouldShow: false)
         print("Mustafa : selected!")

@@ -39,6 +39,7 @@
 		062D6B4A2E6E90E5101CE957 /* Pods_htchhkr_development.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_htchhkr_development.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		712D97DC01121BDFFEE29AD9 /* Pods-htchhkr-development.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-htchhkr-development.debug.xcconfig"; path = "Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development.debug.xcconfig"; sourceTree = "<group>"; };
 		A0A477555A495B551613027E /* Pods-htchhkr-development.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-htchhkr-development.release.xcconfig"; path = "Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development.release.xcconfig"; sourceTree = "<group>"; };
+		D906153C20531FF900B50635 /* gaziantep.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = gaziantep.gpx; sourceTree = "<group>"; };
 		D9216F38204D6B080003AC97 /* UpdateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
 		D9228E762041E8FC00029E1B /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		D92B37F72041C5F000457D59 /* htchhkr-development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "htchhkr-development.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +166,7 @@
 				D92B38032041C5F000457D59 /* LaunchScreen.storyboard */,
 				D92B38062041C5F000457D59 /* Info.plist */,
 				D9E0E7B82045CB5300220B04 /* GoogleService-Info.plist */,
+				D906153C20531FF900B50635 /* gaziantep.gpx */,
 			);
 			path = "htchhkr-development";
 			sourceTree = "<group>";
