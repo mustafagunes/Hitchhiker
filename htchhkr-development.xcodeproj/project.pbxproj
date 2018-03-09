@@ -19,6 +19,8 @@
 		D9375657204471DF001D0D4E /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9375656204471DF001D0D4E /* ContainerVC.swift */; };
 		D937565A204474E6001D0D4E /* CenterVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9375659204474E6001D0D4E /* CenterVCDelegate.swift */; };
 		D9706EFB20526E0200E04F70 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9706EFA20526E0200E04F70 /* Alertable.swift */; };
+		D9706EFD20527D0900E04F70 /* PickupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9706EFC20527D0900E04F70 /* PickupVC.swift */; };
+		D9706EFF20527DF800E04F70 /* RoundMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9706EFE20527DF800E04F70 /* RoundMapView.swift */; };
 		D97FF70D2041F04300EC65F7 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97FF70C2041F04300EC65F7 /* RoundImageView.swift */; };
 		D97FF70F2041F0DC00EC65F7 /* RoundedShadawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97FF70E2041F0DC00EC65F7 /* RoundedShadawView.swift */; };
 		D97FF7112041F1AE00EC65F7 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97FF7102041F1AE00EC65F7 /* CircleView.swift */; };
@@ -50,6 +52,8 @@
 		D9375656204471DF001D0D4E /* ContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 		D9375659204474E6001D0D4E /* CenterVCDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterVCDelegate.swift; sourceTree = "<group>"; };
 		D9706EFA20526E0200E04F70 /* Alertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		D9706EFC20527D0900E04F70 /* PickupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickupVC.swift; sourceTree = "<group>"; };
+		D9706EFE20527DF800E04F70 /* RoundMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundMapView.swift; sourceTree = "<group>"; };
 		D97FF70C2041F04300EC65F7 /* RoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		D97FF70E2041F0DC00EC65F7 /* RoundedShadawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedShadawView.swift; sourceTree = "<group>"; };
 		D97FF7102041F1AE00EC65F7 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 				D93756542044712C001D0D4E /* LeftSidePanelVC.swift */,
 				D9375656204471DF001D0D4E /* ContainerVC.swift */,
 				D9BB9ADA20455848009667D0 /* LoginVC.swift */,
+				D9706EFC20527D0900E04F70 /* PickupVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 				D9BB9ADC20457752009667D0 /* RoundedCornerTextField.swift */,
 				D9F65841204D8D9700ED2335 /* DriverAnnotation.swift */,
 				D9F85729204E64B30046D6FC /* PassengerAnnotation.swift */,
+				D9706EFE20527DF800E04F70 /* RoundMapView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -343,6 +349,8 @@
 				D9706EFB20526E0200E04F70 /* Alertable.swift in Sources */,
 				D92B37FD2041C5F000457D59 /* HomeVC.swift in Sources */,
 				D9216F39204D6B080003AC97 /* UpdateService.swift in Sources */,
+				D9706EFD20527D0900E04F70 /* PickupVC.swift in Sources */,
+				D9706EFF20527DF800E04F70 /* RoundMapView.swift in Sources */,
 				D97FF70D2041F04300EC65F7 /* RoundImageView.swift in Sources */,
 				D92B37FB2041C5F000457D59 /* AppDelegate.swift in Sources */,
 				D9BB9ADD20457752009667D0 /* RoundedCornerTextField.swift in Sources */,
