@@ -57,7 +57,6 @@ class DataService {
     
     func driverIsAvailable(key : String, handler : @escaping (_ status : Bool?) -> Void) {
         
-        
         DataService.instance.REF_DRIVERS.observeSingleEvent(of: .value, with: { (snapshot) in
             
             if let driverSnapshot = snapshot.children.allObjects as? [DataSnapshot]
