@@ -101,33 +101,6 @@ class HomeVC: UIViewController, Alertable {
         
         super.viewWillAppear(animated)
         
-        DataService.instance.driverIsOnTrip(driverKey: self.currentUserId!, handler: { (isOnTrip, driverKey, tripKey) in
-            
-            if isOnTrip == true
-            {
-                DataService.instance.REF_TRIPS.observeSingleEvent(of: .value, with: { (tripSnapshot) in
-                    
-                    if let tripSnapshot = tripSnapshot.children.allObjects as? [DataSnapshot]
-                    {
-                        for trip in tripSnapshot
-                        {
-                            if trip.childSnapshot(forPath: "driverKey").value as? String == self.currentUserId!
-                            {
-                                let pickupCoordinatesArray = trip.childSnapshot(forPath: "pickupCoordinate").value as! NSArray
-                                let pickupCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: pickupCoordinatesArray[0] as! CLLocationDegrees, longitude: pickupCoordinatesArray[1] as! CLLocationDegrees)
-                                let pickupPlacemark = MKPlacemark(coordinate: pickupCoordinate)
-                                
-                                self.dropPinFor(placemark: pickupPlacemark)
-                                self.searchMapKitForResultsWithPolyline(forOriginMapItem: nil, withDestinationMapItem: MKMapItem(placemark: pickupPlacemark))
-                            }
-                        }
-                    }
-                })
-            }
-        })
-        
-        connectUserAndDriverForTrip()
-        
         DataService.instance.REF_TRIPS.observe(.childRemoved, with: { (removedTripSnapshot) in
             
             let removedTripDict = removedTripSnapshot.value as? [String : AnyObject]
@@ -156,6 +129,33 @@ class HomeVC: UIViewController, Alertable {
                 }
             })
         })
+        
+        DataService.instance.driverIsOnTrip(driverKey: self.currentUserId!, handler: { (isOnTrip, driverKey, tripKey) in
+            
+            if isOnTrip == true
+            {
+                DataService.instance.REF_TRIPS.observeSingleEvent(of: .value, with: { (tripSnapshot) in
+                    
+                    if let tripSnapshot = tripSnapshot.children.allObjects as? [DataSnapshot]
+                    {
+                        for trip in tripSnapshot
+                        {
+                            if trip.childSnapshot(forPath: "driverKey").value as? String == self.currentUserId!
+                            {
+                                let pickupCoordinatesArray = trip.childSnapshot(forPath: "pickupCoordinate").value as! NSArray
+                                let pickupCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: pickupCoordinatesArray[0] as! CLLocationDegrees, longitude: pickupCoordinatesArray[1] as! CLLocationDegrees)
+                                let pickupPlacemark = MKPlacemark(coordinate: pickupCoordinate)
+                                
+                                self.dropPinFor(placemark: pickupPlacemark)
+                                self.searchMapKitForResultsWithPolyline(forOriginMapItem: nil, withDestinationMapItem: MKMapItem(placemark: pickupPlacemark))
+                            }
+                        }
+                    }
+                })
+            }
+        })
+        
+        connectUserAndDriverForTrip()
     }
     
     func checkLocationAuthStatus() {
@@ -462,8 +462,6 @@ extension HomeVC : MKMapViewDelegate {
         
         shouldPresentLoadingView(false)
         
-        zoom(toFitAnnotationsFromMapView: self.mapView, forActiveTripWithDriver: false, withKey: nil)
-        
         return lineRenderer
     }
     
@@ -548,8 +546,10 @@ extension HomeVC : MKMapViewDelegate {
             
             if self.mapView.overlays.count == 0
             {
-                self.mapView.add(self.route.polyline)
+                self.mapView.add(self.route!.polyline)
             }
+            
+            self.zoom(toFitAnnotationsFromMapView: self.mapView, forActiveTripWithDriver: false, withKey: nil)
             
             let delegate = AppDelegate.getAppDelegate()
             delegate.window?.rootViewController?.shouldPresentLoadingView(false) // Loading view (Activity Indicator)
