@@ -78,7 +78,7 @@ class LoginVC: UIViewController, UITextFieldDelegate, Alertable {
                             }
                             else
                             {
-                                let userData = ["provider": user.providerID, "userIsDriver" : true, "isPickupModeEnabled" : false, "driverIsOnTrip" : false] as [String: Any]
+                                let userData = ["provider": user.providerID, USER_IS_DRIVER : true, ACCOUNT_PICKUP_MODE_ENABLED : false, DRIVER_IS_ON_TRIP : false] as [String: Any]
                                 DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: true)
                             }
                         }
@@ -91,10 +91,10 @@ class LoginVC: UIViewController, UITextFieldDelegate, Alertable {
                             switch errorCode
                             {
                                 case .wrongPassword:
-                                    self.showAlert("Mustafa : Whoops! That was the wrong password !")
+                                    self.showAlert(ERROR_MSG_WRONG_PASSWORD)
                                 
                                 default:
-                                    self.showAlert("Mustafa : An unxpected error occured. Plaase try again !")
+                                    self.showAlert(ERROR_MSG_UNEXPECTED_ERROR)
                             }
                         }
                         
@@ -106,14 +106,11 @@ class LoginVC: UIViewController, UITextFieldDelegate, Alertable {
                                     
                                     switch errorCode
                                     {
-                                        case .emailAlreadyInUse:
-                                            self.showAlert("Mustafa : Email already in use. Please try again")
-                                        
                                         case .invalidEmail:
-                                            self.showAlert("Mustafa : That is an invalid email! Plase try again.")
+                                            self.showAlert(ERROR_MSG_INVALID_EMAIL)
                                         
                                         default:
-                                            self.showAlert("Mustafa : An unxpected error occured. Plaase try again !")
+                                            self.showAlert(ERROR_MSG_UNEXPECTED_ERROR)
                                     }
                                 }
                             }
@@ -130,7 +127,7 @@ class LoginVC: UIViewController, UITextFieldDelegate, Alertable {
                                     }
                                     else
                                     {
-                                        let userData = ["provider": user.providerID, "userIsDriver" : true, "isPickupModeEnabled" : false, "driverIsOnTrip" : false] as [String: Any]
+                                        let userData = ["provider": user.providerID, USER_IS_DRIVER : true, ACCOUNT_PICKUP_MODE_ENABLED : false, DRIVER_IS_ON_TRIP : false] as [String: Any]
                                         DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: true)
                                     }
                                 }

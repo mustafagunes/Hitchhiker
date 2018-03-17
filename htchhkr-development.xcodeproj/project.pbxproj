@@ -30,6 +30,7 @@
 		D9BB9ADD20457752009667D0 /* RoundedCornerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BB9ADC20457752009667D0 /* RoundedCornerTextField.swift */; };
 		D9E0E7B92045CB5300220B04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9E0E7B82045CB5300220B04 /* GoogleService-Info.plist */; };
 		D9E0E7BC2045CCE900220B04 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E0E7BB2045CCE900220B04 /* DataService.swift */; };
+		D9EE9781205D8FD80018180D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EE9780205D8FD80018180D /* Constants.swift */; };
 		D9F65842204D8D9700ED2335 /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F65841204D8D9700ED2335 /* DriverAnnotation.swift */; };
 		D9F8572A204E64B30046D6FC /* PassengerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F85729204E64B30046D6FC /* PassengerAnnotation.swift */; };
 		D9F8572C204EA2670046D6FC /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8572B204EA2670046D6FC /* UIViewControllerExt.swift */; };
@@ -64,6 +65,7 @@
 		D9BB9ADC20457752009667D0 /* RoundedCornerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerTextField.swift; sourceTree = "<group>"; };
 		D9E0E7B82045CB5300220B04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D9E0E7BB2045CCE900220B04 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		D9EE9780205D8FD80018180D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D9F65841204D8D9700ED2335 /* DriverAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		D9F85729204E64B30046D6FC /* PassengerAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerAnnotation.swift; sourceTree = "<group>"; };
 		D9F8572B204EA2670046D6FC /* UIViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 		D92B37F92041C5F000457D59 /* htchhkr-development */ = {
 			isa = PBXGroup;
 			children = (
+				D9EE977F205D8FBA0018180D /* Resources */,
 				D9E0E7BA2045CCC000220B04 /* Services */,
 				D9BB9AD720454DA6009667D0 /* Extensions */,
 				D9375658204474BD001D0D4E /* Protocols */,
@@ -196,6 +199,14 @@
 				D9216F38204D6B080003AC97 /* UpdateService.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		D9EE977F205D8FBA0018180D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D9EE9780205D8FD80018180D /* Constants.swift */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D937565A204474E6001D0D4E /* CenterVCDelegate.swift in Sources */,
+				D9EE9781205D8FD80018180D /* Constants.swift in Sources */,
 				D9E0E7BC2045CCE900220B04 /* DataService.swift in Sources */,
 				D9F8572C204EA2670046D6FC /* UIViewControllerExt.swift in Sources */,
 				D97FF7132041F31700EC65F7 /* RoundedShadowButton.swift in Sources */,
